@@ -1,0 +1,28 @@
+case 4:
+    System.out.print("Enter Student ID to update: ");
+    int updateId = sc.nextInt();
+    sc.nextLine();
+
+    boolean updated = false;
+
+    for (int i = 0; i < students.size(); i++) {
+        if (students.get(i).getId() == updateId) {
+
+            System.out.print("Enter New Name: ");
+            String newName = sc.nextLine();
+
+            System.out.print("Enter New Age: ");
+            int newAge = sc.nextInt();
+
+            students.set(i, new Student(updateId, newName, newAge));
+
+            System.out.println("Student updated successfully!");
+            updated = true;
+            break;
+        }
+    }
+
+    if (!updated) {
+        System.out.println("Student not found.");
+    }
+    break;
