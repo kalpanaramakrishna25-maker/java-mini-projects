@@ -1,0 +1,19 @@
+case 5:
+    System.out.print("Enter Student ID to delete: ");
+    int deleteId = sc.nextInt();
+
+    boolean deleted = false;
+
+    for (int i = 0; i < students.size(); i++) {
+        if (students.get(i).getId() == deleteId) {
+            students.remove(i);
+            System.out.println("Student deleted successfully!");
+            deleted = true;
+            break;
+        }
+    }
+
+    if (!deleted) {
+        System.out.println("Student not found.");
+    }
+    break;
